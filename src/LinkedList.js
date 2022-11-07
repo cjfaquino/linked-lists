@@ -1,49 +1,49 @@
-import Node from './Node';
+import Node from './Node.js';
 
 export default class LinkedList {
   constructor() {
-    this.head = null;
+    this.HEAD = null;
   }
 
   append(value) {
-    if (this.head === null) {
-      this.head = new Node(value, null);
+    if (this.HEAD === null) {
+      this.HEAD = new Node(value, null);
     } else {
-      let temp = this.head;
+      let temp = this.HEAD;
       while (temp.nextNode !== null) temp = temp.nextNode;
       temp.nextNode = new Node(value, null);
     }
   }
 
   prepend(value) {
-    const temp = this.head;
-    this.head = new Node(value, temp);
+    const temp = this.HEAD;
+    this.HEAD = new Node(value, temp);
   }
 
   size() {
     let count = 0;
-    if (this.head === null) return 0;
-    let temp = this.head;
+    if (this.HEAD === null) return 0;
+    let temp = this.HEAD;
     while (temp.nextNode !== null) {
       temp = temp.nextNode;
       count += 1;
     }
-    return count;
+    return count + 1;
   }
 
   head() {
-    return this.head;
+    return this.HEAD;
   }
 
   tail() {
-    if (this.head === null) return null;
-    let temp = this.head;
+    if (this.HEAD === null) return null;
+    let temp = this.HEAD;
     while (temp.nextNode !== null) temp = temp.nextNode;
     return temp;
   }
 
   at(index) {
-    let temp = this.head;
+    let temp = this.HEAD;
     for (let i = 0; i < index; i++) {
       temp = temp.nextNode;
     }
@@ -51,7 +51,7 @@ export default class LinkedList {
   }
 
   pop() {
-    let temp = this.head;
+    let temp = this.HEAD;
     while (temp.nextNode.nextNode !== null) {
       temp = temp.nextNode;
     }
@@ -59,7 +59,7 @@ export default class LinkedList {
   }
 
   contains(value) {
-    let temp = this.head;
+    let temp = this.HEAD;
     while (temp.data !== value && temp.nextNode !== null) {
       temp = temp.nextNode;
     }
@@ -68,7 +68,7 @@ export default class LinkedList {
 
   find(value) {
     let count = 0;
-    let temp = this.head;
+    let temp = this.HEAD;
     while (temp.data !== value && temp.nextNode !== null) {
       temp = temp.nextNode;
       count += 1;
@@ -79,7 +79,7 @@ export default class LinkedList {
 
   toString() {
     let str = '';
-    let temp = this.head;
+    let temp = this.HEAD;
     while (temp.nextNode !== null) {
       str += `(${temp.data}) -> `;
       temp = temp.nextNode;
