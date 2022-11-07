@@ -89,7 +89,7 @@ export default class LinkedList {
   }
 
   insertAt(value, index) {
-    const temp = this.at(index);
+    const temp = this.at(index - 1);
     const after = temp.nextNode;
     temp.nextNode = new Node(value, after);
   }

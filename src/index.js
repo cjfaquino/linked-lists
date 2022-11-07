@@ -5,6 +5,7 @@ const list = new LinkedList();
 list.append(1);
 list.append(13);
 list.prepend(2);
+list.insertAt(4, 1);
 
 console.log(
   list,
