@@ -80,12 +80,11 @@ export default class LinkedList {
   toString() {
     let str = '';
     let temp = this.HEAD;
-    while (temp.nextNode !== null) {
+    while (temp !== null) {
       str += `(${temp.data}) -> `;
       temp = temp.nextNode;
     }
     str += `null`;
-    console.log(str);
     return str;
   }
 
