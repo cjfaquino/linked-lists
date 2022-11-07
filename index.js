@@ -6,6 +6,7 @@ list.append(1);
 list.append(13);
 list.prepend(2);
 list.insertAt(4, 1);
+list.removeAt(0);
 
 console.log(
   list,
