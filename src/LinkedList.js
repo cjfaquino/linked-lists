@@ -1,4 +1,4 @@
-import Node from './Node.js';
+import Node from '../Node.js';
 
 export default class LinkedList {
   constructor() {
@@ -95,7 +95,10 @@ export default class LinkedList {
   }
 
   removeAt(index) {
-    const temp = this.at(index - 1);
-    temp.nextNode = temp.nextNode.nextNode;
+    if (index === 0) this.HEAD = this.HEAD.nextNode;
+    else if (index > 0) {
+      const temp = this.at(index - 1);
+      temp.nextNode = temp.nextNode.nextNode;
+    }
   }
 }
